@@ -1,5 +1,11 @@
 * RBFN for scikit-learn
-Radial Base Function Networks as scikit-learn classifier.
+Radial Base Function Networks as scikit-learn classifier. Implementation for the paper:
+
+Schröder, Christoph, Sahar Mahdie Klim Al Zaidawi, Martin H.U. Prinzler, Sebastian Maneth, and Gabriel Zachmann.
+"*Robustness of Eye Movement Biometrics Against Varying Stimuli and Varying Trajectory Length*".
+In Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems, 1–7. CHI ’20. Honolulu, HI, USA: Association for Computing Machinery, 2020. https://doi.org/10.1145/3313831.3376534.
+
+This implementation follows the description from Anjith George and Aurobinda Routray. 2016. "*A score level fusion method for eye movement biometrics*". Pattern Recognition Letters 82 (2016), 207–215. DOI: http://dx.doi.org/10.1016/j.patrec.2015.11.020
 
 * Usage
 #+BEGIN_SRC python
@@ -24,11 +30,11 @@ print("\tAccuracy: %1.3f" % accuracy_score(y_test, y_pred))
 #+END_SRC
 
 * Citation
-This implementation follows the description from Anjith George and Aurobinda Routray. 2016. A score level fusion method for eye movement biometrics. Pattern Recognition Letters 82 (2016), 207–215. DOI: http://dx.doi.org/10.1016/j.patrec.2015.11.020
-If you use this code in a scientific publication, we would appreciate citations:
-Schröder, Christoph, Sahar Mahdie Klim Al Zaidawi, Martin H.U. Prinzler, Sebastian Maneth, and Gabriel Zachmann. ‘Robustness of Eye Movement Biometrics Against Varying Stimuli and Varying Trajectory Length’. In Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems, 1–7. CHI ’20. Honolulu, HI, USA: Association for Computing Machinery, 2020. https://doi.org/10.1145/3313831.3376534.
+*If you use this code in a scientific publication, we would appreciate citations:*
 
-Bibtex entry:
+Schröder, Christoph, Sahar Mahdie Klim Al Zaidawi, Martin H.U. Prinzler, Sebastian Maneth, and Gabriel Zachmann. *"Robustness of Eye Movement Biometrics Against Varying Stimuli and Varying Trajectory Length"*". In Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems, 1–7. CHI ’20. Honolulu, HI, USA: Association for Computing Machinery, 2020. https://doi.org/10.1145/3313831.3376534.
+
+*Bibtex entry*
 #+BEGIN_SRC
 @inproceedings{Schroeder-2020-RobustnessEye,
   author = {SchrÃ¶der, Christoph and Al Zaidawi, Sahar Mahdie Klim and Prinzler, Martin H.U. and Maneth, Sebastian and Zachmann, Gabriel},
