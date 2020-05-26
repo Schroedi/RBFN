@@ -1,0 +1,67 @@
+* RBFN for scikit-learn
+Radial Base Function Networks as scikit-learn classifier.
+
+* Usage
+#+BEGIN_SRC python
+from sklearn import datasets
+from sklearn.metrics import classification_report, accuracy_score
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+
+from rbfn import Rbfn
+
+iris = datasets.load_iris()
+X, y = iris.data, iris.target
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5, random_state=42)
+scaler = StandardScaler()
+
+clf = Rbfn()
+clf.fit(scaler.fit_transform(X_train), y_train)
+
+y_pred = clf.predict(scaler.transform(X_test))
+print(classification_report(y_test, y_pred))
+print("\tAccuracy: %1.3f" % accuracy_score(y_test, y_pred))
+#+END_SRC
+
+* Citation
+This implementation follows the description from Anjith George and Aurobinda Routray. 2016. A score level fusion method for eye movement biometrics. Pattern Recognition Letters 82 (2016), 207–215. DOI: http://dx.doi.org/10.1016/j.patrec.2015.11.020
+If you use this code in a scientific publication, we would appreciate citations:
+Schröder, Christoph, Sahar Mahdie Klim Al Zaidawi, Martin H.U. Prinzler, Sebastian Maneth, and Gabriel Zachmann. ‘Robustness of Eye Movement Biometrics Against Varying Stimuli and Varying Trajectory Length’. In Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems, 1–7. CHI ’20. Honolulu, HI, USA: Association for Computing Machinery, 2020. https://doi.org/10.1145/3313831.3376534.
+
+Bibtex entry:
+#+BEGIN_SRC
+@inproceedings{Schroeder-2020-RobustnessEye,
+  author = {SchrÃ¶der, Christoph and Al Zaidawi, Sahar Mahdie Klim and Prinzler, Martin H.U. and Maneth, Sebastian and Zachmann, Gabriel},
+  title = {Robustness of Eye Movement Biometrics Against Varying Stimuli and Varying Trajectory Length},
+  year = {2020},
+  isbn = {9781450367080},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/3313831.3376534},
+  doi = {10.1145/3313831.3376534},
+  booktitle = {Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems},
+  pages = {1â€“7},
+  numpages = {7},
+  keywords = {eye tracking, gaze detection, eye movement biometrics},
+  location = {Honolulu, HI, USA},
+  series = {CHI â€™20}
+}
+#+END_SRC
+
+* License
+This original work is copyright by University of Bremen.
+Any software of this work is covered by the European Union Public Licence v1.2.
+To view a copy of this license, visit
+eur-lex.europa.eu
+
+Any other assets (3D models, documents, etc.) are covered by the
+Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+To view a copy of this license, visit
+creativecommons.org.
+
+If you use any of the assets or software to produce a publication,
+then you must give credit and put a reference in your publication.
+
+If you would like to use our software in proprietary software,
+you can obtain an exception from the above license (aka. dual licensing).
+Please contact zach at cs.uni-bremen dot de.
